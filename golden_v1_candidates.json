@@ -1,0 +1,407 @@
+[
+  {
+    "id": "fixture_001",
+    "message": "Hey quick one — how do I export a project report as PDF? I only see the CSV option in the reports tab but my client specifically wants PDF. Thanks!",
+    "expected": {
+      "category": "how_to",
+      "urgency": "low",
+      "missing_information": [],
+      "suggested_next_action": "Send guidance for report export or confirm current PDF limitations."
+    },
+    "notes": "Clean how-to question about an existing feature. Non-blocking and low urgency — the canonical easy case."
+  },
+  {
+    "id": "fixture_002",
+    "message": "This is RIDICULOUS. You guys charged my card TWICE this month for the Pro plan and now I'm overdrawn because of it. I've been a customer for almost 3 years and this is how you treat people?? Fix it NOW or I'm canceling and disputing the whole thing with my bank. I already emailed last week and got zero response.",
+    "expected": {
+      "category": "billing",
+      "urgency": "high",
+      "missing_information": [
+        "account email or workspace name",
+        "dates of the charges",
+        "invoice or transaction IDs"
+      ],
+      "suggested_next_action": "Review billing history and verify the duplicate charge."
+    },
+    "notes": "Emotional language with real financial impact. High rather than critical because it's a single-user billing issue, not an outage or security event."
+  },
+  {
+    "id": "fixture_003",
+    "message": "Hi team — couple things piling up: 1) the revenue widget on the main dashboard is showing totals that are off by several thousand compared to what's in the billing section, 2) would love a way to pin important clients to the top of the client list, would be huge for us, and 3) Sarah on my team suddenly can't upload files larger than ~5mb, this worked fine last month. Let me know what you need from us.",
+    "expected": {
+      "category": "bug",
+      "urgency": "medium",
+      "missing_information": [
+        "workspace ID",
+        "screenshot of the dashboard discrepancy",
+        "upload error details for Sarah"
+      ],
+      "suggested_next_action": "Collect evidence for the dashboard discrepancy and triage it as a bug."
+    },
+    "notes": "Multi-issue ticket bundling two bugs and a feature request. Bug is the right primary because the dashboard number mismatch is the highest-impact issue and erodes customer trust."
+  },
+  {
+    "id": "fixture_004",
+    "message": "hey its not working again",
+    "expected": {
+      "category": "other",
+      "urgency": "low",
+      "missing_information": [
+        "affected feature or page",
+        "error message or observed behavior",
+        "account or workspace identifier"
+      ],
+      "suggested_next_action": "Ask which feature is affected and request the error details."
+    },
+    "notes": "Too vague to classify into a real issue type. 'Again' hints at recurrence but there is nothing concrete to justify higher urgency yet."
+  },
+  {
+    "id": "fixture_005",
+    "message": "URGENT — nobody on my team can log into FlowPilot as of ~20 minutes ago. 14 people all getting a 'workspace unavailable' error on the login screen. We have client deliverables due today and everything is frozen. Please escalate, we need someone on this now.",
+    "expected": {
+      "category": "account_access",
+      "urgency": "critical",
+      "missing_information": [
+        "workspace name or ID",
+        "admin contact email",
+        "whether SSO is in use"
+      ],
+      "suggested_next_action": "Escalate as a potential workspace access incident and verify affected systems."
+    },
+    "notes": "Multi-user workspace lockout with same-day business impact. Clear critical signal."
+  },
+  {
+    "id": "fixture_006",
+    "message": "Would love it if FlowPilot had a proper Slack integration that posted to our channel whenever a task gets marked complete or a new client gets onboarded. Right now we copy updates across manually and it's a pain, especially as the team grows. Not urgent at all, just putting it on your radar 🙏",
+    "expected": {
+      "category": "feature_request",
+      "urgency": "low",
+      "missing_information": [],
+      "suggested_next_action": "Log the Slack integration request for product review."
+    },
+    "notes": "Clean, well-scoped feature request. User explicitly frames it as non-urgent."
+  },
+  {
+    "id": "fixture_007",
+    "message": "I think notifications are kind of broken? I turned off email notifications in my settings two days ago but I'm still getting emailed every time someone assigns me a task. The in-app ones stopped fine, it's just email. Filtered them in gmail for now but figured you'd want to know.",
+    "expected": {
+      "category": "bug",
+      "urgency": "low",
+      "missing_information": [
+        "account email",
+        "notification type still arriving",
+        "when the setting was changed"
+      ],
+      "suggested_next_action": "Verify notification settings and reproduce the email notification bug."
+    },
+    "notes": "An existing preference is not being honored, so it's a bug. Low urgency because the user has a working email-filter workaround."
+  },
+  {
+    "id": "fixture_008",
+    "message": "THIS IS UNACCEPTABLE. Every time we click 'Generate Monthly Report' the app completely crashes and kicks us out to the login screen with a 500 error. WE HAVE A CLIENT MEETING IN 20 MINS AND CANNOT GET OUR DATA. Fix this NOW or we are cancelling our contract.",
+    "expected": {
+      "category": "bug",
+      "urgency": "high",
+      "missing_information": [
+        "affected workspace name or ID",
+        "browser and OS",
+        "report name or type"
+      ],
+      "suggested_next_action": "Escalate the report-generation crash and collect reproduction details."
+    },
+    "notes": "Severe single-customer blocker with deadline pressure. High rather than critical because there is no evidence of a broader outage."
+  },
+  {
+    "id": "fixture_009",
+    "message": "hey it's not working anymore. John tried yesterday and now the screen goes blank. plz advise.",
+    "expected": {
+      "category": "bug",
+      "urgency": "medium",
+      "missing_information": [
+        "affected page or action",
+        "John's browser and device",
+        "screenshot or exact behavior"
+      ],
+      "suggested_next_action": "Ask for clarification and collect details to reproduce the blank-screen issue."
+    },
+    "notes": "Vague but leans bug because 'screen goes blank' points to broken behavior rather than access. Medium urgency since something is clearly broken even though details are missing."
+  },
+  {
+    "id": "fixture_010",
+    "message": "Hi team, two things. First, my credit card was charged twice this month ($49 and then $49 again on the 14th). Please refund the duplicate. Second, is there a way to make it so our contractors can only see the tasks assigned to them, and not the billing dashboard? They shouldn't see what we charge clients.",
+    "expected": {
+      "category": "billing",
+      "urgency": "high",
+      "missing_information": [
+        "account email or workspace name",
+        "charge dates",
+        "invoice or transaction IDs"
+      ],
+      "suggested_next_action": "Review the billing history and verify the duplicate charge."
+    },
+    "notes": "Multi-issue ticket combining billing and a permissions how-to. Billing wins as primary because the duplicate charge has immediate financial impact and should be handled first."
+  },
+  {
+    "id": "fixture_011",
+    "message": "Why doesn't FlowPilot connect with Zapier yet??? literally every other tool does. I spend 3 hours a week manually copying client data from my CRM into your system. Also can we get dark mode? The white background is blinding.",
+    "expected": {
+      "category": "feature_request",
+      "urgency": "low",
+      "missing_information": ["primary workflow they want to automate"],
+      "suggested_next_action": "Log the Zapier integration and dark mode requests for product review."
+    },
+    "notes": "Frustrated tone but nothing is broken — the user is asking for enhancements. Tests that the model does not over-escalate based on emotion alone."
+  },
+  {
+    "id": "fixture_012",
+    "message": "Locked out of my admin account. I lost my phone over the weekend so I don't have my 2FA authenticator app. I am the sole owner of the workspace so no one else can let me in. Help please, I have payroll to run today and need access.",
+    "expected": {
+      "category": "account_access",
+      "urgency": "high",
+      "missing_information": [
+        "workspace URL or name",
+        "account email",
+        "identity verification details"
+      ],
+      "suggested_next_action": "Start manual identity verification for account recovery."
+    },
+    "notes": "Classic 2FA lockout with a same-day workflow blocker. High fits because impact is real but contained to a single user."
+  },
+  {
+    "id": "fixture_013",
+    "message": "To whom it may concern, I am a freelance tech journalist writing a piece on B2B SaaS growth in the post-pandemic era. I'd love to interview your CEO for my article. Do you have a press kit or a media contact I can speak with?",
+    "expected": {
+      "category": "other",
+      "urgency": "low",
+      "missing_information": [],
+      "suggested_next_action": "Route the message to the appropriate non-support contact."
+    },
+    "notes": "Out-of-scope press inquiry. Clean 'other' case — tests that the model doesn't force a product category onto unrelated messages."
+  },
+  {
+    "id": "fixture_014",
+    "message": "Hi, I just realized I've been on the Business plan for 8 months but we only have 2 people using FlowPilot. I thought I signed up for the Starter plan back when I joined. Is there any way to get a refund for the difference? Not trying to be difficult, just a tight month.",
+    "expected": {
+      "category": "billing",
+      "urgency": "medium",
+      "missing_information": [
+        "account email or workspace name",
+        "subscription history",
+        "whether they want a downgrade going forward"
+      ],
+      "suggested_next_action": "Review the subscription history and verify refund eligibility."
+    },
+    "notes": "Polite billing concern with possible long-term overcharge. Medium fits because it matters financially but isn't an acute incident."
+  },
+  {
+    "id": "fixture_015",
+    "message": "Does FlowPilot integrate with QuickBooks? We're evaluating a few tools right now.",
+    "expected": {
+      "category": "other",
+      "urgency": "low",
+      "missing_information": [],
+      "suggested_next_action": "Route the inquiry to the appropriate sales or pre-sales contact."
+    },
+    "notes": "Pre-sales evaluation question rather than a support ticket. Good edge case — topic is product-adjacent but the sender is not yet a customer."
+  },
+  {
+    "id": "fixture_016",
+    "message": "I want to cancel my subscription effective immediately. I don't want to be charged again. Please confirm cancellation and send me my final invoice.",
+    "expected": {
+      "category": "billing",
+      "urgency": "high",
+      "missing_information": ["account email or workspace name"],
+      "suggested_next_action": "Verify the account and triage the cancellation request before the next billing cycle."
+    },
+    "notes": "Clear, time-sensitive cancellation request. High urgency because missing the billing cycle would trigger another unwanted charge and likely a dispute."
+  },
+  {
+    "id": "fixture_017",
+    "message": "Ok so I have a few things. First my new hire Marcus can't see the Projects tab at all even though I added him as a member last Thursday, his role is set to 'Member' same as everyone else. Second, unrelated, but is there a way to set a default task due date like always 7 days out from creation? We keep forgetting to set them. And third I got an invoice notification that felt off — it said $0.00 for this month but we're on a paid plan, should I be worried?",
+    "expected": {
+      "category": "account_access",
+      "urgency": "high",
+      "missing_information": [
+        "Marcus's email address",
+        "workspace name or ID",
+        "screenshot of Marcus's role or permissions"
+      ],
+      "suggested_next_action": "Investigate the member access issue preventing Marcus from using the Projects tab."
+    },
+    "notes": "Multi-issue ticket across access, a feature request, and a billing anomaly. Access is the primary because the Projects tab block is the clearest immediate blocker."
+  },
+  {
+    "id": "fixture_018",
+    "message": "I am absolutely done. I have reset my password THREE times today and every single time I click the link in the email it says 'link expired or invalid'. I have a meeting in 45 minutes where I need to walk my client through our project in FlowPilot and I physically cannot get in. I've tried two different browsers. This is a critical failure on your end and if I lose this client because of your broken system I will be seeking compensation. Someone needs to call me.",
+    "expected": {
+      "category": "account_access",
+      "urgency": "high",
+      "missing_information": [
+        "account email",
+        "whether an alternate login method exists",
+        "workspace name or URL"
+      ],
+      "suggested_next_action": "Escalate the password reset failure and verify the account recovery path."
+    },
+    "notes": "Emotionally charged single-user lockout with a hard deadline. High rather than critical because the failure affects one user, not a confirmed multi-user incident."
+  },
+  {
+    "id": "fixture_019",
+    "message": "hey so we just noticed that when a client gets archived in FlowPilot their associated files seem to vanish too?? like we archived Greenleaf Consulting last week and now all the contracts and SOWs we uploaded under that client are just gone from the files section. Please tell me they're not deleted. We need those for compliance.",
+    "expected": {
+      "category": "bug",
+      "urgency": "critical",
+      "missing_information": [
+        "workspace name or ID",
+        "archived client name and date",
+        "number of affected files"
+      ],
+      "suggested_next_action": "Escalate the potential file-loss issue and verify whether the files can be recovered."
+    },
+    "notes": "Potential data loss with compliance implications — critical is the right level given the blast radius across any customer who archives clients."
+  },
+  {
+    "id": "fixture_020",
+    "message": "Hi support, I'm trying to add a new team member to our workspace but when I go to Settings > Team it says 'You do not have permission to manage members.' I'm the one who created this workspace two years ago so I should definitely be an admin. Did something change? My coworker needs access by end of week for onboarding.",
+    "expected": {
+      "category": "account_access",
+      "urgency": "high",
+      "missing_information": [
+        "account email",
+        "workspace name or ID",
+        "whether any admin changes happened recently"
+      ],
+      "suggested_next_action": "Check the user's admin role and investigate the permissions error."
+    },
+    "notes": "Workspace creator blocked from an admin function — suggests a possible permissions regression. High urgency because it blocks onboarding but isn't a platform-wide incident."
+  },
+  {
+    "id": "fixture_021",
+    "message": "we switched from monthly to annual billing in march and now my invoices page shows two active subscriptions?? ones monthly at $49 and ones annual at $468. i havent been double charged yet as far as i can tell but i really dont want to find out the hard way next month. can someone clean this up",
+    "expected": {
+      "category": "billing",
+      "urgency": "medium",
+      "missing_information": [
+        "account email or workspace name",
+        "date of the billing change",
+        "whether the switch was self-serve or handled by support"
+      ],
+      "suggested_next_action": "Review the subscription records and verify which plan is active."
+    },
+    "notes": "Billing state inconsistency without an actual duplicate charge yet. Medium fits — real issue, but not acute, and cleanup is preventive."
+  },
+  {
+    "id": "fixture_022",
+    "message": "Hello, I watched one of your old webinars on YouTube about automating task assignments and the presenter mentioned a 'Rules' tab under project settings. I can't find it anywhere. Was it removed, or am I looking in the wrong place? I'm on the Starter plan if that matters. Appreciate any help!",
+    "expected": {
+      "category": "how_to",
+      "urgency": "low",
+      "missing_information": [
+        "which webinar or approximate date",
+        "workspace plan tier confirmation"
+      ],
+      "suggested_next_action": "Clarify whether the feature is plan-gated, renamed, or no longer available."
+    },
+    "notes": "User is asking about an existing capability referenced in older material. Good ambiguity test between how_to, plan-gating, and deprecated-feature answers."
+  },
+  {
+    "id": "fixture_023",
+    "message": "Hey support, I'm trying to upload the architectural blueprints for the Smith project (it's a 50MB PDF) and it just hangs at 99% then says 'Error 413'. We need to share this with the client today. Also, unrelated, but my dashboard says it's 3AM when it's really 10AM here in London. Help?",
+    "expected": {
+      "category": "bug",
+      "urgency": "high",
+      "missing_information": [
+        "browser used for upload",
+        "workspace plan tier",
+        "current timezone setting"
+      ],
+      "suggested_next_action": "Investigate the upload failure and provide a workaround for sharing the file."
+    },
+    "notes": "Multi-issue bug ticket. Upload failure is the primary because it blocks a same-day client deliverable; the timezone issue is a lower-severity separate bug."
+  },
+  {
+    "id": "fixture_024",
+    "message": "i sent an invte to my new assistant sarah last week but she was on vacation and the link expired. I try to resend it but the system says 'User already exists' but she cant log in because she never set a passwrd. how do we fix this???",
+    "expected": {
+      "category": "account_access",
+      "urgency": "medium",
+      "missing_information": ["Sarah's email address", "workspace name or ID"],
+      "suggested_next_action": "Verify the pending user state and guide the account recovery or re-invite flow."
+    },
+    "notes": "Messy, typo-heavy invite-flow issue. Medium urgency because onboarding is blocked but there's no wider incident."
+  },
+  {
+    "id": "fixture_025",
+    "message": "URGENT!!! All our clients are emailing us saying the client portal is down showing a 'Subscription Suspended' page! Our card was updated last Tuesday and I have the receipt showing the $299 went through. YOU ARE MAKING US LOOK UNPROFESSIONAL. Turn it back on IMMEDIATELY.",
+    "expected": {
+      "category": "billing",
+      "urgency": "critical",
+      "missing_information": [
+        "workspace name or ID",
+        "transaction ID",
+        "date of the card update"
+      ],
+      "suggested_next_action": "Escalate the billing-status incident and verify the payment state immediately."
+    },
+    "notes": "Billing-state problem causing a client-facing outage with direct reputational impact. Critical is the right level."
+  },
+  {
+    "id": "fixture_026",
+    "message": "so basically I run a landscaping business and we have 5 crews. usually they just text me when they finish a job but I'm trying to use flowpilot more. if a crew leader checks off a task on the app, is there a way it can send me an email automatically? I looked at the settings but honestly there are too many checkboxes and I don't want to mess anything up.",
+    "expected": {
+      "category": "how_to",
+      "urgency": "low",
+      "missing_information": [],
+      "suggested_next_action": "Send guidance for configuring task completion email notifications."
+    },
+    "notes": "Chatty, context-heavy message that ultimately asks how to configure an existing notification feature. Tests that the model doesn't over-triage wordy but simple tickets."
+  },
+  {
+    "id": "fixture_027",
+    "message": "Hey FlowPilot team! Loving the platform so far, it's been a game changer for our agency. Quick question - do you guys have any plans to add a Kanban board view for projects? The list view is okay, but my designers are really visual and miss dragging and dropping cards like in Trello. Cheers!",
+    "expected": {
+      "category": "feature_request",
+      "urgency": "low",
+      "missing_information": [],
+      "suggested_next_action": "Log the Kanban board request for product review."
+    },
+    "notes": "Friendly, well-scoped feature request. Tonal counterpoint to the frustrated feature request in the set."
+  },
+  {
+    "id": "fixture_028",
+    "message": "Hi there, I noticed your company isn't ranking very well for 'project management for service businesses'. Our agency specializes in B2B SaaS SEO and we helped a competitor of yours 3x their organic traffic in 6 months. Would you have 15 mins next week for a quick chat?",
+    "expected": {
+      "category": "other",
+      "urgency": "low",
+      "missing_information": [],
+      "suggested_next_action": "Close the ticket or route it out of support."
+    },
+    "notes": "Inbound sales pitch rather than a product support request. Tests that spam / outbound outreach is correctly routed to 'other'."
+  },
+  {
+    "id": "fixture_029",
+    "message": "How do I transfer workspace ownership to my operations manager without losing access to our past invoices and project history? I'm stepping back from day-to-day admin stuff but still need visibility.",
+    "expected": {
+      "category": "how_to",
+      "urgency": "low",
+      "missing_information": ["current user role", "target admin email"],
+      "suggested_next_action": "Send guidance for workspace ownership transfer and clarify remaining access after transfer."
+    },
+    "notes": "Straightforward admin-task how-to. Nothing is broken and the user is planning ahead."
+  },
+  {
+    "id": "fixture_030",
+    "message": "Ever since yesterday's update, completed recurring tasks are being duplicated across a bunch of active projects. We cleaned up one project manually and then it happened again this morning. Not the end of the world yet but it's creating a mess fast.",
+    "expected": {
+      "category": "bug",
+      "urgency": "medium",
+      "missing_information": [
+        "affected project or template",
+        "approximate start time",
+        "example of a duplicated task set"
+      ],
+      "suggested_next_action": "Collect reproduction details and investigate the recurring task duplication bug."
+    },
+    "notes": "Clear post-release regression affecting project data. Medium fits because there is a manual workaround but the impact is growing."
+  }
+]
