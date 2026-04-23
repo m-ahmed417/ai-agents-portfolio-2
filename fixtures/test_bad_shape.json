@@ -1,0 +1,18 @@
+{
+  "fixtures": [
+    {
+      "id": "FP-004",
+      "message": "I was charged twice this month.",
+      "expected": {
+        "category": "billing",
+        "urgency": "high",
+        "missing_information": [
+          "What invoice or charge amount is duplicated?",
+          "When were the charges posted?"
+        ],
+        "suggested_next_action": "Review account billing history for duplicate charge."
+      },
+      "notes": "Wrapped in an object on purpose."
+    }
+  ]
+}

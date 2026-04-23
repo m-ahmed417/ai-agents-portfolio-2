@@ -1,0 +1,30 @@
+[
+  {
+    "id": "FP-001",
+    "message": "I’ve been trying to log in since this morning and the reset email never arrives.",
+    "expected": {
+      "category": "account_access",
+      "urgency": "high",
+      "missing_information": [
+        "What email address is associated with the account?",
+        "Are they seeing any error message on login?"
+      ],
+      "suggested_next_action": "Verify account email and investigate login/reset issue."
+    },
+    "notes": "Clear access blocker."
+  },
+  {
+    "id": "FP-002",
+    "message": "How do I export invoice data for last quarter?",
+    "expected": {
+      "category": "how_to",
+      "urgency": "low",
+      "missing_information": [
+        "Which export format do they need?",
+        "Are they an admin or billing user?"
+      ],
+      "suggested_next_action": "Provide guidance for exporting invoice data."
+    },
+    "notes": "Straightforward how-to request."
+  }
+]

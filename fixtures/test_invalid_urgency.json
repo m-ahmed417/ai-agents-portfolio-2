@@ -1,0 +1,16 @@
+[
+  {
+    "id": "FP-003",
+    "message": "Our invoices are failing to send and clients are asking where they are.",
+    "expected": {
+      "category": "bug",
+      "urgency": "urgent",
+      "missing_information": [
+        "When did the issue start?",
+        "Is this affecting all invoices or only some?"
+      ],
+      "suggested_next_action": "Investigate invoice sending failure."
+    },
+    "notes": "Uses an invalid urgency value on purpose."
+  }
+]
