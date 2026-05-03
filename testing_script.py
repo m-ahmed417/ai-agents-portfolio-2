@@ -1,6 +1,7 @@
 from collections import Counter
 from src.fixture_loader import load_golden_fixtures
 
+
 fixtures = load_golden_fixtures("fixtures/golden_v1.json")
 print(f"Loaded {len(fixtures)} fixtures successfully")
 
@@ -71,3 +72,6 @@ for fixture in fixtures:
     if not fixture.id.startswith("fixture_"):
         print(f"Fixture {fixture.id} does not follow standard naming convention")
         print()       
+        
+
+

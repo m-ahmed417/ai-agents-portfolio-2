@@ -4,6 +4,7 @@ from src.fixture_loader import load_golden_fixtures
 from src.schemas import GoldenFixture
 
 
+
 def test_load_valid_fixtures():
     fixtures = load_golden_fixtures("fixtures/test_valid.json")
 
@@ -26,3 +27,4 @@ def test_reject_bad_top_level_shape():
         load_golden_fixtures("fixtures/test_bad_shape.json")
 
     assert "top-level JSON array" in str(exc_info.value)
+    
