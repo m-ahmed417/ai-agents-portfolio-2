@@ -30,7 +30,8 @@ class DeepSeekProvider(BaseTriageProvider):
             {"role": "user", "content": f"Here is the customer message: {message}"},
         ],
         response_format={"type": "json_object"},
-        stream=False
+        stream=False,
+        temperature=0
         )
         
         content = response.choices[0].message.content

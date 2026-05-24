@@ -94,6 +94,16 @@ Use when the user is blocked from an important workflow, there is a serious acco
 `critical`  
 Use for severe business impact, multi-user or company-wide outages, data loss risk, security or data exposure risk, serious client-facing disruption, or an issue preventing urgent business operations.
 
+Do not use `critical` for emotional language, threats to cancel, duplicate charges, or single-customer billing issues unless there is severe client-facing disruption, data loss risk, security risk, or a multi-user outage.
+
+Use `high` for serious single-customer blockers or urgent billing/account issues that need fast support attention but do not meet the `critical` threshold.
+
+For bugs, do not raise urgency just because the user is frustrated or because an error exists.
+Use `low` when there is a minor bug with a workaround or limited impact.
+Use `medium` when a bug affects normal use but has a workaround or unclear scope.
+Use `high` when a bug blocks an important workflow for one customer/team.
+Use `critical` only for likely data loss, security risk, multi-user outage, or serious client-facing disruption.
+
 ## Multi-issue messages
 
 If the message contains more than one issue, choose one primary category.
